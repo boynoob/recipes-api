@@ -22,6 +22,7 @@ type Recipe struct {
 	PublishedAt  time.Time `json:"publishedAt"`
 }
 
+
 func NewRecipeHandler(c *gin.Context) {
 	var recipe Recipe
 	if err := c.ShouldBindJSON(&recipe); err != nil {
@@ -34,6 +35,7 @@ func NewRecipeHandler(c *gin.Context) {
 	recipes = append(recipes, recipe)
 	c.JSON(http.StatusOK, recipe)
 }
+
 
 func main() {
 	router := gin.Default()
