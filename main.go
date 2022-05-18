@@ -44,6 +44,7 @@ func ListRecipesHandler(c *gin.Context) {
 	c.JSON(http.StatusOK, recipes)
 }
 
+
 func UpdateRecipeHandler(c *gin.Context) {
 	id := c.Param("id")
 	var recipe Recipe
@@ -70,6 +71,7 @@ func UpdateRecipeHandler(c *gin.Context) {
 
 	c.JSON(http.StatusOK, recipe)
 }
+
 
 func main() {
 	router := gin.Default()
